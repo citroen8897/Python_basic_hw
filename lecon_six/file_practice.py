@@ -95,16 +95,41 @@ if __name__ == '__main__':
     В средину файла file_practice.txt вставить строку '*some inserted text*'
 """
 
+# решение "по символам"
+
 
 def main():
     s_1 = '*some inserted text*'
     with open('file_practice.txt') as file:
         s_2 = file.read()
     temp_2 = len(s_2) // 2
-    s_2 = s_2[:temp_2 + 1] + s_1 + s_2[temp_2:]
+    s_2 = s_2[:temp_2] + s_1 + s_2[temp_2:]
     with open('file_practice.txt', 'w') as file:
         file.write(s_2)
 
 
 if __name__ == '__main__':
     main()
+
+
+# решение по строкам
+
+
+# def main():
+#     s_1 = ['*some inserted text*']
+#     with open('file_practice.txt') as file:
+#         s_2 = file.readlines()
+#     if len(s_2) % 2 == 0:
+#         temp_1 = len(s_2) // 2
+#         s_2 = s_2[:temp_1] + s_1 + s_2[temp_1:]
+#         print(s_2)
+#     else:
+#         temp_1 = len(s_2) // 2
+#         temp_2 = len(s_2[temp_1]) // 2
+#         s_2[temp_1] = s_2[temp_1][:temp_2] + s_1[0] + s_2[temp_1][temp_2:]
+#     with open('file_practice.txt', 'w') as file:
+#         file.writelines(s_2)
+#
+#
+# if __name__ == '__main__':
+#     main()
