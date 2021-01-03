@@ -13,19 +13,19 @@ import re
 
 
 def main():
-    d_b_1 = []
+    data_base_1 = []
     with open('phone_book.txt') as file:
         for line in file.readlines():
             line.strip()
-            d_b_1.append(line)
+            data_base_1.append(line)
 
-    d_b_2 = []
-    for element in d_b_1:
+    data_base_2 = []
+    for element in data_base_1:
         if re.search(r'M|m\S+', element) or re.search(r'\S+A|a\s', element):
-            d_b_2.append(element)
+            data_base_2.append(element)
 
     user_numero = 0
-    for element in d_b_2:
+    for element in data_base_2:
         user_name = ''
         user_telephone = ''
         for a in element:
