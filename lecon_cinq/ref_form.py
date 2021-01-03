@@ -6,63 +6,63 @@ import re
 def main():
     print('S.P.Q.R\nВас приветствует программа регистрации пользователей\n'
           'Заполните пожалуйста форму регистрации\n')
-    travail_un = telephone()
-    travail_deux = email()
-    travail_trois = password()
+    user_phone = get_telephone()
+    user_e_post = get_email()
+    user_password = get_password()
     print(f'\nПоздравляем с успешной регистрацией!\n'
-          f'Ваш номер телефона: {travail_un}\n'
-          f'Ваш e-mail: {travail_deux}\n'
-          f'Ваш пароль: {travail_trois}')
+          f'Ваш номер телефона: {user_phone}\n'
+          f'Ваш e-mail: {user_e_post}\n'
+          f'Ваш пароль: {user_password}')
 
 
-def telephone():
+def get_telephone():
     base_op = ('050', '066', '095', '099', '067', '097', '096', '098', '063',
                '073', '093', '044', '045', '068')
 
-    telephone_de_user = input('Введите номер телефона: ')
+    phone_user_input = input('Введите номер телефона: ')
 
-    for element in telephone_de_user:
+    for element in phone_user_input:
         if not element.isdigit():
-            telephone_de_user = telephone_de_user.replace(element, '')
+            phone_user_input = phone_user_input.replace(element, '')
 
-    if len(telephone_de_user) < 10 or telephone_de_user[-10:-7] not in base_op:
+    if len(phone_user_input) < 10 or phone_user_input[-10:-7] not in base_op:
         print('Неверно введенный номер!\nПопробуйте снова.\n')
-        return telephone()
-    elif not telephone_de_user.startswith('+38'):
-        telephone_de_user = '+38' + telephone_de_user[-10:]
-    return telephone_de_user
+        return get_telephone()
+    elif not phone_user_input.startswith('+38'):
+        phone_user_input = '+38' + phone_user_input[-10:]
+    return phone_user_input
 
 
-def email():
-    email_de_user = input('Введите e-mail: ')
+def get_email():
+    email_user_input = input('Введите e-mail: ')
 
-    if not re.search(r'\w+\.*\w+@\w+\.\w+', email_de_user):
+    if not re.search(r'\w+\.*\w+@\w+\.\w+', email_user_input):
         print('Неверно введенный e-mail! Повторите ввод.\n')
-        return email()
-    return email_de_user
+        return get_email()
+    return email_user_input
 
 
-def password():
+def get_password():
     print('***\nТребования к паролю:\nПароль должен содержать:\nБольшую букву'
           '\nмаленькую букву\nцифру\nспецсимвол\nне содержать пробелов'
           '\nдлина пароля минимум 8 символов\n***\n')
-    password_de_user = input('Задайте пароль: ')
+    password_user_input = input('Задайте пароль: ')
 
-    if len(password_de_user) < 8 or re.search(r'\s', password_de_user):
+    if len(password_user_input) < 8 or re.search(r'\s', password_user_input):
         print('0 - Пароль ненадежный. Введите другой.\n')
-        return password()
-    elif not re.search(r'\d', password_de_user) or \
-            not re.search(r'[a-z]', password_de_user) or \
-            not re.search(r'[A-Z]', password_de_user) or \
-            not re.search(r'[^a-zA-Z0-9]', password_de_user):
+        return get_password()
+    elif not re.search(r'\d', password_user_input) or \
+            not re.search(r'[a-z]', password_user_input) or \
+            not re.search(r'[A-Z]', password_user_input) or \
+            not re.search(r'[^a-zA-Z0-9]', password_user_input):
         print('1 - Пароль ненадежный. Введите другой.\n')
-        return password()
+        return get_password()
 
-    password_de_user_repond = input('Повторите пароль: ')
+    password_user_input_confirm = input('Повторите пароль: ')
 
-    if password_de_user_repond != password_de_user:
-        return password()
-    return password_de_user
+    if password_user_input_confirm != password_user_input:
+        return get_password()
+    return password_user_input
 
 
 if __name__ == '__main__':
