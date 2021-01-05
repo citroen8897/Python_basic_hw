@@ -1,10 +1,19 @@
 def sort_ascending(x):
-    temp_2 = [j for j in range(len(x)) if x[j] == -1]
-    x.sort()
-    x = [j for j in x if j > 0]
-    for q in temp_2:
-        x.insert(q, -1)
-    return x
+    # вариант 1
+    # temp_2 = [j for j in range(len(x)) if x[j] == -1]
+    # x.sort()
+    # x = [j for j in x if j > 0]
+    # for q in temp_2:
+    #     x.insert(q, -1)
+    # return x
+
+    # вариант 2
+    temp_1 = [j for j in x if j != -1]
+    temp_1.sort()
+    for i in range(len(x)):
+        if x[i] == -1:
+            temp_1.insert(i, -1)
+    return temp_1
 
 
 test_1 = [-1, 150, 190, 170, -1, -1, 160, 180]
