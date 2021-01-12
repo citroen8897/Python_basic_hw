@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Foma",
+        "games": 11,
+        "avg_attempts": 3.272727272727273,
+        "record": 1
+    },
+    {
+        "name": "Alexey",
+        "games": 10,
+        "avg_attempts": 2.9,
+        "record": 1
+    },
+    {
+        "name": "Georgiu",
+        "games": 11,
+        "avg_attempts": 3.6363636363636362,
+        "record": 1
+    },
+    {
+        "name": "Fox",
+        "games": 11,
+        "avg_attempts": 3.3636363636363638,
+        "record": 2
+    },
+    {
+        "name": "James",
+        "games": 2,
+        "avg_attempts": 2.5,
+        "record": 2
+    }
+]
