@@ -16,13 +16,23 @@ import re
 
 
 def reverse_brackets(input_string):
-    list_temp = [i for i in (re.split(r'(\w*)', input_string)) if i != '']
-    for i in range(len(list_temp)):
-        if list_temp[i] == '(':
-            list_temp[i + 1] = list_temp[i + 1][::-1]
-    list_temp = [i for i in list_temp if i not in ('(', ')')]
-    output_string = ''.join(list_temp)
-    return output_string
+    if not re.search(r'\)\w*\)', input_string):
+        while '(' in input_string:
+            index_1 = input_string.find(')')
+            index_2 = input_string.find('(')
+            string_temp_1 = input_string[index_2 + 1:index_1]
+            string_temp_1 = string_temp_1[::-1]
+            input_string = input_string[:index_2] + string_temp_1 + \
+                           input_string[index_1 + 1:]
+    else:
+        while '(' in input_string:
+            index_1 = input_string.find(')')
+            index_2 = input_string.rfind('(')
+            string_temp_1 = input_string[index_2 + 1:index_1]
+            string_temp_1 = string_temp_1[::-1]
+            input_string = input_string[:index_2] + string_temp_1 + \
+                           input_string[index_1 + 1:]
+    return input_string
 
 
 string = '(bar)'
@@ -34,6 +44,7 @@ assert reverse_brackets(string) == 'foorabbaz'
 string = 'foo(bar)baz(blim)'
 assert reverse_brackets(string) == 'foorabbazmilb'
 
-# string = 'foo(bar(baz))blim'
-# assert reverse_brackets(string) == 'foobazrabblim'
+string = 'foo(bar(baz))blim'
+assert reverse_brackets(string) == 'foobazrabblim'
+
 print('All tests passed successfully!')
