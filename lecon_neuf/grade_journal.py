@@ -39,7 +39,8 @@ def main():
         get_etudiant_et_numero.append(dict_temp)
     get_etudiant_et_numero.sort(key=lambda data: data['numero'])
     for element in get_etudiant_et_numero[::-1]:
-        print(f'{get_etudiant_et_numero[::-1].index(element) + 1}. {element["nom"]}')
+        print(f'{get_etudiant_et_numero[::-1].index(element) + 1}. '
+              f'{element["nom"]}')
 
 
 if __name__ == '__main__':
