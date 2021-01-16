@@ -22,6 +22,7 @@ print(func_1(data))
 
 
 @time_decorator
+@slow_decorator
 def func_2(list_input):
     return sorted(list_input, key=lambda element: (element[0], element[1]))
 
@@ -31,6 +32,7 @@ print(func_2(data))
 #    цвет которых состоит из 4 букв.
 
 
+@slow_decorator
 @time_decorator
 def func_3(list_input):
     return list(filter(lambda element: len(element[1]) == 4, list_input))
@@ -43,6 +45,7 @@ print(func_3(data))
 
 
 @time_decorator
+@slow_decorator
 def func_4(list_input):
     return max(list_input, key=lambda element: len(element[1]))
 
