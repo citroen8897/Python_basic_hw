@@ -13,35 +13,18 @@
     2
     Напишите несколько тестов
 """
+from slow_decorator import time_decorator
 
 
+@time_decorator
 def skates(available_sizes, foot_sizes):
-    # temp_1 = set(available_sizes)
-    # temp_2 = set(foot_sizes)
-    # temp_3 = set()
-    # for i in temp_2:
-    #     try:
-    #         for j in temp_1:
-    #             if i <= j:
-    #                 temp_3.add(i)
-    #                 temp_1.remove(j)
-    #     except RuntimeError:
-    #         continue
-    # return len(temp_3)
-
-    res_set = set()
-    available_sizes.sort()
-    foot_sizes.sort()
-    print(available_sizes)
-    print(foot_sizes)
-    for i in available_sizes:
-        for j in foot_sizes:
-            if i <= j:
-                res_set.add(i)
-                foot_sizes.remove(i)
-    print(res_set)
-    print(available_sizes)
-    return len(res_set)
+    res_list = []
+    for j in foot_sizes:
+        for i in available_sizes:
+            if j <= i:
+                res_list.append(j)
+                available_sizes.remove(i)
+    return len(res_list)
 
 
 list_available = [39, 38, 41, 37]
@@ -61,7 +44,11 @@ list_foot = [44]
 assert skates(list_available, list_foot) == 1
 
 list_available = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
-list_foot = [46]
+list_foot = [46, 47, 47, 50]
 assert skates(list_available, list_foot) == 0
+
+list_available = [39, 39, 39, 39]
+list_foot = [37, 37, 40, 39, 39, 39, 39, 40, 40]
+assert skates(list_available, list_foot) == 4
 
 print('All tests passed successfully')
