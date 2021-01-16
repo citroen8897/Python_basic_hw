@@ -1,4 +1,5 @@
 import random
+from slow_decorator import time_decorator
 
 # 1. Создайте переменную x, которая равняется 2 в степени 3
 x = 2 ** 3
@@ -55,6 +56,7 @@ print(sorted(countries_info, key=lambda q: q['population']))
 #     {'country': 'USA', 'population': 123, 'cities': ['New York', 'Los Angeles', 'Portland']}
 
 
+@time_decorator
 def create_country_info(country, population, cities):
     dict_info_country = {'country': country,
                          'population': int(population),

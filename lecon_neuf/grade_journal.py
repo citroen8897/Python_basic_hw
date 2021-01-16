@@ -16,8 +16,10 @@
         2. Фролов
         3. Иванов
 """
+from slow_decorator import time_decorator
 
 
+@time_decorator
 def main():
     try:
         get_numero_des_etudiants = int(input('Задай количество студентов: '))
