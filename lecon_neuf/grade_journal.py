@@ -24,8 +24,8 @@ def main():
     try:
         get_numero_des_etudiants = int(input('Задай количество студентов: '))
     except ValueError:
-        get_numero_des_etudiants = int(input('Некорректно!\n'
-                                             'Задай количество студентов: '))
+        return main()
+
     get_etudiant_et_numero = []
     for i in range(get_numero_des_etudiants):
         user_input = input('Введи фамилию и оценку: ')
