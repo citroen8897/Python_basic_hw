@@ -8,26 +8,13 @@
 
 
 def frequent_word(text):
-    text = text.lower().replace('.', '').split(' ')
-    d_1 = {}
-    for element in text:
-        if element in d_1:
-            d_1[element] += 1
-        else:
-            d_1[element] = 1
-    list_temp = []
-    for k, v in d_1.items():
-        list_temp.append([v, k])
-    list_temp.sort()
-    if len(list_temp) > 1:
-        while list_temp[-1][0] != list_temp[0][0]:
-            list_temp.pop(0)
-        for element in list_temp:
-            element[0], element[1] = element[1], element[0]
-    else:
-        list_temp[0][0], list_temp[0][1] = list_temp[0][1], list_temp[0][0]
-    list_temp.sort()
-    return list_temp[0][0]
+    import re
+    temp = re.findall(r'\w+', text)
+    temp = [i.lower() for i in temp]
+    temp = sorted(list(set([(temp.count(i), i) for i in temp])))
+    temp = [temp[j] for j in range(len(temp)) if temp[j][0] == temp[-1][0]]
+    temp = sorted([(i[1], i[0]) for i in temp])
+    return temp[0][0]
 
 
 text = 'Как видно из примера, присвоение по новому ключу расширяет ' \
