@@ -1,7 +1,8 @@
 import random
 import json
 
-while True:
+
+def main():
     get_user_name = input('Введи имя: ')
     user_info = {'name': get_user_name.title(),
                  'games': 0,
@@ -72,8 +73,12 @@ while True:
             file_data_base.close()
 
             more_play = input('Продолжим играть?\nВведите да/нет')
-            while more_play != 'да' and more_play != 'нет':
-                more_play = input('Продолжим играть?\nВведите да/нет')
-            if more_play == 'нет':
+            if more_play == 'да':
+                return main()
+            if more_play != 'да':
                 input('Нажмите любую клавишу для выхода')
-                break
+                exit()
+
+
+if __name__ == '__main__':
+    main()

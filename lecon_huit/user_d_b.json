@@ -1,14 +1,14 @@
 [
     {
         "name": "Foma",
-        "games": 11,
-        "avg_attempts": 3.272727272727273,
+        "games": 23,
+        "avg_attempts": 3.130434782608696,
         "record": 1
     },
     {
         "name": "Alexey",
-        "games": 10,
-        "avg_attempts": 2.9,
+        "games": 11,
+        "avg_attempts": 2.909090909090909,
         "record": 1
     },
     {
@@ -28,5 +28,11 @@
         "games": 2,
         "avg_attempts": 2.5,
         "record": 2
+    },
+    {
+        "name": "Qwerty",
+        "games": 2,
+        "avg_attempts": 1.0,
+        "record": 1
     }
 ]
