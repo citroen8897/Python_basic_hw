@@ -19,17 +19,17 @@ from slow_decorator import time_decorator
 @time_decorator
 def skates(available_sizes, foot_sizes):
     res_list = []
-    for j in foot_sizes:
-        for i in available_sizes:
-            if j <= i:
-                res_list.append(j)
-                available_sizes.remove(i)
+    for i in available_sizes:
+        for j in foot_sizes:
+            if j <= i and len(res_list) < len(available_sizes):
+                res_list.append(i)
+                foot_sizes.remove(j)
     return len(res_list)
 
 
-list_available = [39, 38, 41, 37]
-list_foot = [40, 39, 41]
-assert skates(list_available, list_foot) == 2
+list_available = [37, 38, 39, 40]
+list_foot = [37, 37, 40, 40]
+assert skates(list_available, list_foot) == 3
 
 list_available = [39, 38, 41, 37]
 list_foot = [40, 36, 37, 39]
