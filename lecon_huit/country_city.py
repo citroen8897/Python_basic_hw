@@ -8,10 +8,10 @@
 """
 
 data = {
-    'Ukraine': ['Kiev', 'Kharkiv', 'Odesa', 'Dnipro'],
-    'France': ['Paris', 'Marseille', 'Lyon', 'Toulouse'],
-    'Austria': ['Vienna', 'Graz', 'Linz', 'Salzburg'],
-    'Germany': ['Berlin', 'Hamburg', 'Munich', 'Frankfurt']
+    "Ukraine": ["Kiev", "Kharkiv", "Odesa", "Dnipro"],
+    "France": ["Paris", "Marseille", "Lyon", "Toulouse"],
+    "Austria": ["Vienna", "Graz", "Linz", "Salzburg"],
+    "Germany": ["Berlin", "Hamburg", "Munich", "Frankfurt"],
 }
 
 
@@ -21,17 +21,17 @@ def get_country(city, data):
             return k
 
 
-assert get_country('Kharkiv', data) == 'Ukraine'
-assert get_country('Salzburg', data) == 'Austria'
-assert get_country('Paris', data) == 'France'
-assert get_country('Berlin', data) == 'Germany'
-print('All tests passed successfully!')
+assert get_country("Kharkiv", data) == "Ukraine"
+assert get_country("Salzburg", data) == "Austria"
+assert get_country("Paris", data) == "France"
+assert get_country("Berlin", data) == "Germany"
+print("All tests passed successfully!")
 
 
 def groupping(data):
     list_temp = []
     for k, v in data.items():
-        d_1 = {'country': k, 'capital': v[0], 'cities': v[1:]}
+        d_1 = {"country": k, "capital": v[0], "cities": v[1:]}
         list_temp.append(d_1)
     return list_temp
 

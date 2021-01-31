@@ -22,28 +22,32 @@ from slow_decorator import time_decorator
 @time_decorator
 def main():
     try:
-        get_numero_des_etudiants = int(input('Задай количество студентов: '))
+        get_numero_des_etudiants = int(input("Задай количество студентов: "))
     except ValueError:
         return main()
 
     get_etudiant_et_numero = []
     for i in range(get_numero_des_etudiants):
-        user_input = input('Введи фамилию и оценку: ')
-        nom_de_etudiant = ''
-        numero_de_etudiant = ''
+        user_input = input("Введи фамилию и оценку: ")
+        nom_de_etudiant = ""
+        numero_de_etudiant = ""
         for j in user_input:
             if j.isalpha():
                 nom_de_etudiant += j
             elif j.isdigit():
                 numero_de_etudiant += j
-        dict_temp = {'nom': nom_de_etudiant.title(),
-                     'numero': int(numero_de_etudiant)}
+        dict_temp = {
+            "nom": nom_de_etudiant.title(),
+            "numero": int(numero_de_etudiant),
+        }
         get_etudiant_et_numero.append(dict_temp)
-    get_etudiant_et_numero.sort(key=lambda data: data['numero'])
+    get_etudiant_et_numero.sort(key=lambda data: data["numero"])
     for element in get_etudiant_et_numero[::-1]:
-        print(f'{get_etudiant_et_numero[::-1].index(element) + 1}. '
-              f'{element["nom"]}')
+        print(
+            f"{get_etudiant_et_numero[::-1].index(element) + 1}. "
+            f'{element["nom"]}'
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

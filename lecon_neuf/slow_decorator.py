@@ -15,13 +15,16 @@ def time_decorator(func):
         start = time.time()
         return_value = func(*args, **kwargs)
         end = time.time()
-        print(f'\nВремя выполнения функции {func.__name__} {end - start} '
-              f'секунд')
+        print(
+            f"\nВремя выполнения функции {func.__name__} {end - start} "
+            f"секунд"
+        )
 
         if end - start > 5:
-            print(f'{func.__name__} - очень медленная функция')
+            print(f"{func.__name__} - очень медленная функция")
 
         return return_value
+
     return wrapper
 
 
@@ -32,4 +35,5 @@ def slow_decorator(func):
         time.sleep(5)
         return_value = func(*args, **kwargs)
         return return_value
+
     return wrapper

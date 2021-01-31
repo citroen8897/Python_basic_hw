@@ -6,23 +6,23 @@
 
 
 def main():
-    print('S.P.Q.R.')
+    print("S.P.Q.R.")
 
-    user_string = input('Введите строку: ')
+    user_string = input("Введите строку: ")
     if len(user_string) == 0:
         return main()
 
     print(
-        f'Строка без пробелов: {delete_spaces(user_string)}\n'
-        f'Длина строки с пробелами: {len(user_string)}\n'
-        f'Длина строки без пробелов: {len(delete_spaces(user_string))}'
+        f"Строка без пробелов: {delete_spaces(user_string)}\n"
+        f"Длина строки с пробелами: {len(user_string)}\n"
+        f"Длина строки без пробелов: {len(delete_spaces(user_string))}"
     )
 
 
 def delete_spaces(s):
-    s = s.replace(' ', '')
+    s = s.replace(" ", "")
     return s
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

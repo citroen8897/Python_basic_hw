@@ -5,7 +5,7 @@
 # "abba com mother", "com mother bill", "mother bill mother" и т.д.
 # Тут правильным ответом должно быть "abba com mother" (частота — 3 раза).
 
-s = input('Задайте строку: ')
+s = input("Задайте строку: ")
 L = s.split()
 L_1 = []
 for a in range(len(L) - 2):
@@ -20,5 +20,5 @@ while L_1[0] != L_1[-1]:
             L_1.pop(L_1.index(a))
         elif L_1.count(a) > L_1.count(L_1[-1]):
             L_1.pop(-1)
-print('Количество повторяющихся троек:', len(L_1))
-print('Повторяющаяся тройка:', ' '.join(L_1[0]))
+print("Количество повторяющихся троек:", len(L_1))
+print("Повторяющаяся тройка:", " ".join(L_1[0]))

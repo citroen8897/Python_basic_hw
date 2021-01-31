@@ -7,11 +7,11 @@
 
 
 def main():
-    with open('file_practice.txt', 'w') as file:
-        file.write('Starting practice with files\n')
+    with open("file_practice.txt", "w") as file:
+        file.write("Starting practice with files\n")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
 """
@@ -22,16 +22,16 @@ if __name__ == '__main__':
 
 
 def main():
-    with open('file_practice.txt') as file:
+    with open("file_practice.txt") as file:
         string_1 = file.read(5)
         string_1 = string_1.upper()
         file.seek(0)
         string_2 = file.read()
-        print('Первые 5 символов: ', string_1)
-        print('Файл целиком: ', string_2)
+        print("Первые 5 символов: ", string_1)
+        print("Файл целиком: ", string_2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
 """
@@ -44,25 +44,27 @@ if __name__ == '__main__':
 
 
 def main():
-    with open('text.txt', 'w') as file:
-        string_3 = 'Proin laoreet dui vel libero dapibus vehicula vitae ' \
-                   'eget turpis.\nNam non eros eu elit posuere posuere id ' \
-                   'ac turpis.\nQuisque nec orci blandit, lobortis felis ' \
-                   'non, eleifend felis.\nVivamus at odio at lacus viverra ' \
-                   'luctus et ut mauris.\nEtiam vehicula nibh eu quam ' \
-                   'feugiat tempus.'
+    with open("text.txt", "w") as file:
+        string_3 = (
+            "Proin laoreet dui vel libero dapibus vehicula vitae "
+            "eget turpis.\nNam non eros eu elit posuere posuere id "
+            "ac turpis.\nQuisque nec orci blandit, lobortis felis "
+            "non, eleifend felis.\nVivamus at odio at lacus viverra "
+            "luctus et ut mauris.\nEtiam vehicula nibh eu quam "
+            "feugiat tempus."
+        )
         file.write(string_3)
-    with open('text.txt') as file:
+    with open("text.txt") as file:
         string_4 = file.read()
-    if string_4.count('i') > string_4.count('e'):
-        string_4 = string_4.replace('e', 'i')
+    if string_4.count("i") > string_4.count("e"):
+        string_4 = string_4.replace("e", "i")
     else:
-        string_4 = string_4.replace('i', 'e')
-    with open('file_practice.txt', 'a') as file:
+        string_4 = string_4.replace("i", "e")
+    with open("file_practice.txt", "a") as file:
         file.write(string_4)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
 """
@@ -74,20 +76,20 @@ if __name__ == '__main__':
 
 
 def main():
-    with open('file_practice.txt') as file:
+    with open("file_practice.txt") as file:
         string_5 = file.read()
-    with open('file_practice.txt', 'w') as file:
-        temp_1 = string_5.count(' ') + string_5.count('\n')
+    with open("file_practice.txt", "w") as file:
+        temp_1 = string_5.count(" ") + string_5.count("\n")
         if (len(string_5) - temp_1) % 2 == 0:
-            string_5 = string_5 + '\nthe end'
+            string_5 = string_5 + "\nthe end"
         else:
-            string_5 = string_5 + '\nbye'
+            string_5 = string_5 + "\nbye"
         file.write(string_5)
-    with open('file_practice.txt') as file:
+    with open("file_practice.txt") as file:
         print(file.read())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
 """
@@ -116,9 +118,9 @@ if __name__ == '__main__':
 
 
 def main():
-    s_1 = ['*some inserted text*']
-    s_1_1 = ['*some inserted text*\n']
-    with open('file_practice.txt') as file:
+    s_1 = ["*some inserted text*"]
+    s_1_1 = ["*some inserted text*\n"]
+    with open("file_practice.txt") as file:
         s_2 = file.readlines()
     if len(s_2) % 2 == 0:
         temp_1 = len(s_2) // 2
@@ -127,9 +129,9 @@ def main():
         temp_1 = len(s_2) // 2
         temp_2 = len(s_2[temp_1]) // 2
         s_2[temp_1] = s_2[temp_1][:temp_2] + s_1[0] + s_2[temp_1][temp_2:]
-    with open('file_practice.txt', 'w') as file:
+    with open("file_practice.txt", "w") as file:
         file.writelines(s_2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

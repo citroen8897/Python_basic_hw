@@ -1,4 +1,4 @@
-s = ['1', 'sdasd', '123', '3.14', 'w3s']
+s = ["1", "sdasd", "123", "3.14", "w3s"]
 s_1 = [int(i) for i in s if i.isdigit()]
 print(s_1)
 

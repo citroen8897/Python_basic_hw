@@ -16,12 +16,10 @@
 
 
 def minesweeper(matrix):
-    minefield = [[0, 0, 0],
-                 [0, 0, 0],
-                 [0, 0, 0]]
+    minefield = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
-            if matrix[i][j] == 'true':
+            if matrix[i][j] == "true":
                 print(i, j)
                 if i == 0 and j == 0:
                     minefield[i][j + 1] += 1
@@ -76,9 +74,11 @@ def minesweeper(matrix):
     return minefield
 
 
-matrix = [['true', 'false', 'false'],
-          ['false', 'true', 'false'],
-          ['false', 'false', 'false']]
+matrix = [
+    ["true", "false", "false"],
+    ["false", "true", "false"],
+    ["false", "false", "false"],
+]
 
 # matrix = [['false', 'true', 'false'],
 #           ['false', 'true', 'false'],

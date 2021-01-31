@@ -51,4 +51,4 @@ list_available = [39, 39, 39, 39]
 list_foot = [37, 37, 40, 39, 39, 39, 39, 40, 40]
 assert skates(list_available, list_foot) == 4
 
-print('All tests passed successfully')
+print("All tests passed successfully")

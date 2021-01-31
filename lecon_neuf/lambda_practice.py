@@ -2,9 +2,18 @@ from slow_decorator import time_decorator
 from slow_decorator import slow_decorator
 
 data = [
-    (2, 'green'), (1, 'blue'), (2, 'yellow'), (1, 'aquamarine'),
-    (4, 'red'), (3, 'gold'), (5, 'black'), (2, 'brown'),
-    (5, 'pink'), (1, 'purple'), (4, 'white'), (1, 'gray'),
+    (2, "green"),
+    (1, "blue"),
+    (2, "yellow"),
+    (1, "aquamarine"),
+    (4, "red"),
+    (3, "gold"),
+    (5, "black"),
+    (2, "brown"),
+    (5, "pink"),
+    (1, "purple"),
+    (4, "white"),
+    (1, "gray"),
 ]
 
 # 1. Вывести список data, отсортированный по цвету (2 элемент кортежа).

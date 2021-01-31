@@ -31,4 +31,4 @@ assert sort_ascending(test_4) == [1, 3, -1, 23, 43, -1, -1, 54, -1, -1, -1, 77]
 test_5 = [-1]
 assert sort_ascending(test_5) == [-1]
 
-print('All tests passed successfully!')
+print("All tests passed successfully!")
